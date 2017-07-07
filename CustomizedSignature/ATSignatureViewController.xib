@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ATSignatureViewController" customModule="CustomizedSignature" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="86n-dt-XwE" id="Jly-Sv-wes"/>
+                <outlet property="clickToStartButton" destination="uhS-Fw-A8k" id="Xxt-pi-dui"/>
+                <outlet property="confirmButton" destination="HrU-FN-oXG" id="LZh-vJ-KRX"/>
+                <outlet property="signatureImgView" destination="mwG-C6-3Ej" id="fcZ-j3-63i"/>
+                <outlet property="signatureView" destination="Nwc-Nk-bwn" id="F6v-i7-qJE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="490" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-Fw-A8k">
+                    <rect key="frame" x="0.0" y="0.0" width="490" height="300"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="點擊簽署"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-Nk-bwn" customClass="SignatureView" customModule="CustomizedSignature" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="490" height="300"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mwG-C6-3Ej">
+                    <rect key="frame" x="0.0" y="0.0" width="490" height="300"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-ac-Jol">
+                    <rect key="frame" x="15" y="278" width="375" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="fl4-lj-vQg"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86n-dt-XwE">
+                    <rect key="frame" x="15" y="240" width="65" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="Saf-nv-1tM" userLabel="height = 30"/>
+                        <constraint firstAttribute="width" constant="65" id="zdz-y6-xvW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.65087431669235229" green="0.079661764204502106" blue="0.3159925639629364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrU-FN-oXG">
+                    <rect key="frame" x="410" y="260" width="65" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="9Y9-ZD-tUO"/>
+                        <constraint firstAttribute="height" constant="25" id="hOW-6W-DFL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.65087431669235229" green="0.079661764204502106" blue="0.3159925639629364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="uhS-Fw-A8k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="22v-wP-6Ex"/>
+                <constraint firstItem="Nwc-Nk-bwn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7co-88-ccN"/>
+                <constraint firstAttribute="bottom" secondItem="uhS-Fw-A8k" secondAttribute="bottom" id="7eS-fY-qjR"/>
+                <constraint firstAttribute="trailing" secondItem="HrU-FN-oXG" secondAttribute="trailing" constant="15" id="Ahh-rE-wGw"/>
+                <constraint firstItem="mwG-C6-3Ej" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BR0-WP-6wb"/>
+                <constraint firstItem="mwG-C6-3Ej" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PFO-NS-H9w"/>
+                <constraint firstAttribute="bottom" secondItem="3HI-ac-Jol" secondAttribute="bottom" constant="20" id="UOC-Uf-teB"/>
+                <constraint firstAttribute="bottom" secondItem="Nwc-Nk-bwn" secondAttribute="bottom" id="VeA-13-P4K"/>
+                <constraint firstAttribute="trailing" secondItem="uhS-Fw-A8k" secondAttribute="trailing" id="bu3-BA-7d5"/>
+                <constraint firstAttribute="trailing" secondItem="mwG-C6-3Ej" secondAttribute="trailing" id="cqV-0H-BmM"/>
+                <constraint firstAttribute="bottom" secondItem="HrU-FN-oXG" secondAttribute="bottom" constant="15" id="e6F-XB-qLw"/>
+                <constraint firstAttribute="bottom" secondItem="86n-dt-XwE" secondAttribute="bottom" constant="35" id="eeG-gc-ZX1"/>
+                <constraint firstItem="uhS-Fw-A8k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fUd-pV-Gut"/>
+                <constraint firstItem="86n-dt-XwE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="gMR-1O-vwP"/>
+                <constraint firstItem="3HI-ac-Jol" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="jJQ-mS-51N"/>
+                <constraint firstAttribute="trailing" secondItem="3HI-ac-Jol" secondAttribute="trailing" constant="100" id="lIk-JN-2oE"/>
+                <constraint firstItem="Nwc-Nk-bwn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mCB-Da-fac"/>
+                <constraint firstAttribute="bottom" secondItem="mwG-C6-3Ej" secondAttribute="bottom" id="qfI-jL-hVe"/>
+                <constraint firstAttribute="trailing" secondItem="Nwc-Nk-bwn" secondAttribute="trailing" id="vNa-tO-yJt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="14" y="-11"/>
+        </view>
+    </objects>
+</document>
