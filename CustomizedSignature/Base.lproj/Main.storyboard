@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,17 +22,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-yK-Tsb">
-                                <rect key="frame" x="70" y="120" width="884" height="548"/>
+                                <rect key="frame" x="262" y="234.5" width="500" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="F4O-GF-FdL"/>
+                                    <constraint firstAttribute="width" constant="500" id="NXl-0q-0hI"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GOY-yK-Tsb" secondAttribute="bottom" constant="100" id="KbQ-k7-piL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GOY-yK-Tsb" secondAttribute="trailing" constant="50" id="M65-5q-s7G"/>
-                            <constraint firstItem="GOY-yK-Tsb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QRd-ND-xKf"/>
-                            <constraint firstItem="GOY-yK-Tsb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="q3l-2J-cxy"/>
-                            <constraint firstItem="GOY-yK-Tsb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="vhZ-nW-EKK"/>
+                            <constraint firstItem="GOY-yK-Tsb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Af4-77-CMr"/>
+                            <constraint firstItem="GOY-yK-Tsb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T0u-ea-D71"/>
                         </constraints>
                     </view>
                     <connections>

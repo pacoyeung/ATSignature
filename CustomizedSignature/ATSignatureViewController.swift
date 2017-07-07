@@ -38,7 +38,6 @@ open class ATSignatureViewController: UIViewController {
     
     private var targetView: UIView!
     private var layer:CAShapeLayer!
-    private var layerOriginFrame: CGRect!
     private var showModal:Int!
     private var borderModal: Int!
     private var display:[String]!
@@ -120,7 +119,6 @@ open class ATSignatureViewController: UIViewController {
         //MARK: - Set Border
         
         self.layer = CAShapeLayer(layer: self.targetView.layer)
-        self.layerOriginFrame = self.targetView.bounds
         
         switch self.borderModal {
         case 1:
@@ -132,7 +130,6 @@ open class ATSignatureViewController: UIViewController {
             self.layer.cornerRadius = 5
             self.layer.lineWidth = 5
             self.layer.path = UIBezierPath.init(rect: self.targetView.bounds).cgPath
-            self.layer.frame = self.targetView.bounds
         default:
             self.layer.frame = self.targetView.bounds
         }
@@ -153,25 +150,6 @@ open class ATSignatureViewController: UIViewController {
         self.clickToStartButton.backgroundColor = UIColor.init(red: 176/255, green: 176/255, blue: 176/255, alpha: 0.6)
         self.clickToStartButton.addTarget(self, action: #selector(clickToStartButtonDidPress(_:)), for: .touchUpInside)
         
-    }
-    override open func viewDidAppear(_ animated: Bool) {
-        
-        // MARK: - Set NotificationCenter Listen Screen Orientation
-        //It is because the border draws directly on the screen, it is a instance of CAShapeLayer
-        //开始生成 设备旋转 通知
-        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        //添加 设备旋转 通知
-        NotificationCenter.default.addObserver(self, selector: #selector(viewDidRotate(_:)), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
-        
-    }
-    override open func viewDidDisappear(_ animated: Bool) {
-        
-        // MARK: - Delete NotificationCenter Listen Screen Orientation
-        //销毁 设备旋转 通知
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        //结束 设备旋转通知
-        UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
     
     
@@ -259,32 +237,6 @@ open class ATSignatureViewController: UIViewController {
     }
     
     // MARK: - Override Function 
-    
-    func viewDidRotate(_ interfaceOrientation: UIInterfaceOrientation) {
-        
-         //self.layer.frame = self.targetView.bounds
-        
-        switch(UIDevice.current.orientation) {
-        case UIDeviceOrientation.portrait:
-            let cgRect = CGRect(x: self.targetView.bounds.origin.x, y: self.targetView.bounds.origin.y, width: self.targetView.bounds.height, height: self.targetView.bounds.width)
-            self.layer.path = UIBezierPath.init(rect: cgRect).cgPath
-            print("portrait")
-        case UIDeviceOrientation.landscapeRight:
-            let cgRect = CGRect(x: self.targetView.bounds.origin.x, y: self.targetView.bounds.origin.y, width: self.targetView.bounds.height, height: self.targetView.bounds.width)
-            self.layer.path = UIBezierPath.init(rect: cgRect).cgPath
-            print("landscapeRight")
-        case UIDeviceOrientation.landscapeLeft:
-            let cgRect = CGRect(x: self.targetView.bounds.origin.x, y: self.targetView.bounds.origin.y, width: self.targetView.bounds.height, height: self.targetView.bounds.width)
-            self.layer.path = UIBezierPath.init(rect: cgRect).cgPath
-            print("landscapeLeft")
-        case UIDeviceOrientation.portraitUpsideDown:
-            print("portraitUpsideDown")
-        default:
-                print("unknown")
-        }
-
-        
-    }
     
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

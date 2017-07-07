@@ -21,6 +21,8 @@ class ViewController: UIViewController, ATSignatureDelegate {
         
         let vc = ATSignatureViewController(signatureDelegate: self, targetView: targetView)
         self.vc = vc
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,5 +51,6 @@ class ViewController: UIViewController, ATSignatureDelegate {
     {
         print("InvalidDirectoryError")
     }
+    
 }
 
