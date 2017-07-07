@@ -1,2 +1,0 @@
-# ATSignature
-APP TASK - ATSignature
